@@ -69,3 +69,27 @@ document.addEventListener("click", (e) => {
     closeDrawer();
   }
 });
+
+
+let selectedVersion = null;
+
+const versions = document.querySelectorAll(".version");
+const selectedText = document.getElementById("selectedVersion");
+const downloadBtn = document.getElementById("downloadBtn");
+
+versions.forEach(v => {
+  const btn = v.querySelector(".select-btn");
+
+  btn.addEventListener("click", () => {
+    selectedVersion = v.dataset.version;
+
+    selectedText.textContent = "v" + selectedVersion;
+
+    downloadBtn.href = `/zips/${selectedVersion}-id.zip`;
+    downloadBtn.removeAttribute("disabled");
+
+    // highlight selected
+    versions.forEach(x => x.style.outline = "none");
+    v.style.outline = "2px solid var(--accent)";
+  });
+});
