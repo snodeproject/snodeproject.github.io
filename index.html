@@ -14,15 +14,12 @@
 <body>
 
   <!-- NAVBAR -->
-  <header class="navbar">
-  <div class="logo">
-    <i class="fa-brands fa-node-js"></i> Snode
-  </div>
+<header class="navbar">
 
-  <!-- HAMBURGER -->
-  <button class="hamburger" id="hamburger">
-    <i class="fa-solid fa-bars"></i>
-  </button>
+  <div class="left">
+    <img src="/logo.png" class="logo" alt="Snode logo">
+    <span class="brand">Snode</span>
+  </div>
 
   <nav id="nav">
     <a href="#" data-i18n="home"></a>
@@ -30,7 +27,7 @@
     <a href="#" data-i18n="download"></a>
   </nav>
 
-  <div class="actions">
+  <div class="right">
     <select id="langSwitcher">
       <option value="it">IT</option>
       <option value="en">EN</option>
@@ -39,8 +36,20 @@
     <button id="themeToggle">
       <i class="fa-solid fa-circle-half-stroke"></i>
     </button>
+
+    <button class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </div>
-  </header>
+
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="drawer">
+  <a href="#" data-i18n="home"></a>
+  <a href="#" data-i18n="docs"></a>
+  <a href="#" data-i18n="download"></a>
+</div>
 
   <!-- HERO -->
   <section class="hero">
