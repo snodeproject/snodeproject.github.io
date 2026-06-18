@@ -1,0 +1,76 @@
+<header class="navbar">
+
+    <div class="navbar-container">
+
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">
+
+            <img
+                src="{{ '/assets/images/logo.png' | relative_url }}"
+                alt="Snode Logo">
+
+            <span>Snode</span>
+
+        </a>
+
+        <nav class="navbar-links" id="navbarLinks">
+
+            <a href="{{ '/' | relative_url }}">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="{{ '/download/' | relative_url }}">
+                <i class="fa-solid fa-download"></i>
+                Download
+            </a>
+
+            <a href="{{ '/docs/' | relative_url }}">
+                <i class="fa-solid fa-book"></i>
+                Documentazione
+            </a>
+
+            <a href="{{ '/spm/' | relative_url }}">
+                <i class="fa-solid fa-box"></i>
+                SPM
+            </a>
+
+            <a href="{{ '/community/' | relative_url }}">
+                <i class="fa-solid fa-users"></i>
+                Community
+            </a>
+
+            <a href="https://github.com/dromilang/snode">
+
+                <i class="fa-brands fa-github"></i>
+
+                GitHub
+
+            </a>
+
+        </nav>
+
+        <div class="navbar-actions">
+
+            <button id="themeButton" class="icon-button">
+
+                <i class="fa-solid fa-circle-half-stroke"></i>
+
+            </button>
+
+            <button id="languageButton" class="icon-button">
+
+                <i class="fa-solid fa-language"></i>
+
+            </button>
+
+            <button id="menuButton" class="icon-button mobile-only">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
