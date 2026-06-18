@@ -45,3 +45,19 @@ document.getElementById("langSwitcher").onchange = (e) => {
 
 // init language
 loadLang(localStorage.getItem("lang") || "it");
+
+
+// -------------
+//    MENU
+// -------------
+const hamburger = document.getElementById("hamburger");
+const drawer = document.getElementById("drawer");
+
+hamburger.onclick = () => {
+  drawer.classList.toggle("active");
+};
+
+// chiudi drawer se clicchi un link
+drawer.querySelectorAll("a").forEach(a => {
+  a.onclick = () => drawer.classList.remove("active");
+});
