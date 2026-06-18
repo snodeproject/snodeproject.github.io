@@ -1,0 +1,14 @@
+hero:
+  title: "Snode"
+  subtitle: "Un runtime JavaScript open source scritto in Python che ricrea l'esperienza di Node.js."
+  download: "Scarica"
+  docs: "Documentazione"
+
+nav:
+  home: "Home"
+  download: "Download"
+  docs: "Documentazione"
+  community: "Community"
+
+features:
+  title: "Perché Snode?"
