@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snode - Download</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <div class="left">
+    <img src="/logo.png" class="logo" alt="Snode logo">
+    <span class="brand">Snode</span>
+  </div>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/docs">Docs</a>
+    <a href="/download">Download</a>
+  </nav>
+
+  <div class="right">
+    <button id="themeToggle">
+      <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+  </div>
+
+</header>
+
+<!-- DOWNLOAD SECTION -->
+<section class="download">
+
+  <h1>Download Snode</h1>
+  <p data-i18n="dsnode"></p>
+
+  <!-- VERSION SELECTOR -->
+  <div class="version-box">
+
+    <div class="version" data-version="1.0.0">
+      <div class="v-left">
+        <span class="v-name">v1.0.0</span>
+        <span class="badge current">CURRENT</span>
+      </div>
+      <button class="select-btn" data-i18n="select_btn"></button>
+    </div>
+
+  </div>
+
+  <!-- DOWNLOAD ACTION -->
+  <div class="download-box">
+    <p data-i18n="selecttext"></p>
+    <h2 id="selectedVersion">Nessuna</h2>
+
+    <a id="downloadBtn" class="download-btn" href="#" disabled>
+      <i class="fa-solid fa-download"></i> Download
+    </a>
+  </div>
+
+</section>
+
+<script src="/js/download.js"></script>
+</body>
+</html>
