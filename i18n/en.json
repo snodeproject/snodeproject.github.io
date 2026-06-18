@@ -3,4 +3,10 @@
   "docs": "Docs",
   "download": "Download",
   "subtitle": "An open source JavaScript runtime written in Python that recreates the Node.js experience."
+
+  "download_title": "Download Snode",
+  "download_subtitle": "Choose a version and download the runtime.",
+  "select_btn": "Select",
+  "selecttext": "Selected version:",
+
 }
