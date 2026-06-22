@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Snode – Runtime JavaScript scritto in Python</title>
+  <title>Snode – Download</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -130,21 +130,12 @@
       }
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO (DOWNLOAD) ===== */
     .hero {
-      max-width: 1200px;
+      max-width: 900px;
       margin: auto;
       padding: 3rem 1.5rem;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
+      text-align: center;
     }
 
     .hero-title {
@@ -162,9 +153,93 @@
     .hero-sub {
       font-size: 1.1rem;
       color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      max-width: 40rem;
+      margin-bottom: 2rem;
     }
+
+    /* ===== CUSTOM SELECT (NODE.JS STYLE) ===== */
+    .download-box {
+      max-width: 600px;
+      margin: auto;
+      background: var(--bg-light);
+      border: 1px solid #1f2229;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .select-wrapper {
+      position: relative;
+      margin-top: 1rem;
+    }
+
+    .select-display {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      padding: 0.9rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+    }
+
+    .select-display:hover {
+      border-color: var(--accent);
+    }
+
+    .select-arrow {
+      transition: 0.2s;
+    }
+
+    .select-arrow.open {
+      transform: rotate(180deg);
+    }
+
+    .select-menu {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      right: 0;
+      background: var(--bg-light);
+      border: 1px solid #1f2229;
+      border-radius: 8px;
+      overflow: hidden;
+      display: none;
+      z-index: 20;
+    }
+
+    .select-menu.open {
+      display: block;
+    }
+
+    .select-option {
+      padding: 0.9rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      border-bottom: 1px solid #1a1d24;
+    }
+
+    .select-option:last-child {
+      border-bottom: none;
+    }
+
+    .select-option:hover {
+      background: #0d1117;
+    }
+
+    .badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .badge-current { background: var(--accent3); color: white; }
+    .badge-lts { background: var(--accent2); color: white; }
+    .badge-eol { background: #b30000; color: white; }
 
     .btn-download {
       background: var(--accent);
@@ -175,58 +250,13 @@
       border: none;
       cursor: pointer;
       font-size: 1rem;
+      margin-top: 1.5rem;
+      width: 100%;
     }
 
     .btn-download:hover {
       background: var(--viola);
       color: white;
-    }
-
-    /* ===== CODE BOX ===== */
-    .code-box {
-      background: #0d1117;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      padding: 1rem;
-      font-family: "Fira Code", monospace;
-      font-size: 0.85rem;
-      overflow-x: auto;
-      color: #e6edf3;
-    }
-
-    /* ===== BOXES SOTTO HERO ===== */
-    .sections {
-      max-width: 1200px;
-      margin: auto;
-      padding: 2rem 1.5rem 3rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-    }
-
-    @media (max-width: 900px) {
-      .sections { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 600px) {
-      .sections { grid-template-columns: 1fr; }
-    }
-
-    .card {
-      background: var(--bg-light);
-      border: 1px solid #1f2229;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-
-    .card h3 {
-      margin-bottom: 0.4rem;
-      font-size: 1.1rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
     }
 
     /* ===== FOOTER ===== */
@@ -264,60 +294,47 @@
   </header>
 
   <!-- ===== HERO ===== -->
-  <section class="hero" id="about">
-    <div>
-      <h1 class="hero-title">
-        Il runtime <span>JavaScript</span> che ti fa sentire a casa.
-      </h1>
-
-      <p class="hero-sub">
-Snode è un runtime JavaScript open source scritto in Python che ricrea l'esperienza di Node.js.
-      </p>
-
-      <button class="btn-download" onclick="window.location.href = '/zips/0.1.0.zip'"><i class="fa-solid fa-download"></i> Scarica Snode 0.1.0</button>
-    </div>
-
-    <div class="code-box">
-<pre>
-// Snode: pi greco semplice
-const simplePi = "3.149389273920910063916301";
-
-const selection = prompt("Dimmi un numero e ti dirò se è nel pi greco semplice:");
-
-if (simplePi.includes(selection)) {
-  console.log("È nel pi greco!");
-} else {
-  console.log("Non c'è!");
-}
-
-// Esempio output:
-// Dimmi un numero e ti dirò se è nel pi greco semplice: 149
-// È nel pi greco!
-</pre>
-    </div>
+  <section class="hero">
+    <h1 class="hero-title">Scarica <span>Snode</span></h1>
+    <p class="hero-sub">Seleziona la versione dal menu personalizzato.</p>
   </section>
 
-  <!-- ===== BOXES ===== -->
-  <section class="sections" id="docs">
-    <div class="card">
-      <h3>Documentazione</h3>
-      <p>API, moduli built‑in, esempi e guida al runtime.</p>
+  <!-- ===== DOWNLOAD BOX ===== -->
+  <section class="download-box">
+
+    <h3>Versione</h3>
+
+    <div class="select-wrapper">
+
+      <div class="select-display" id="selectDisplay">
+        <span id="selectedText">0.1.0</span>
+        <i class="fa-solid fa-chevron-down select-arrow" id="selectArrow"></i>
+      </div>
+
+      <div class="select-menu" id="selectMenu">
+
+        <div class="select-option" data-version="0.1.0">
+          <span>0.1.0</span>
+          <span class="badge badge-current">CURRENT</span>
+        </div>
+
+        <div class="select-option" data-version="0.0.5">
+          <span>0.0.5</span>
+          <span class="badge badge-lts">LTS</span>
+        </div>
+
+        <div class="select-option" data-version="0.0.1">
+          <span>0.0.1</span>
+          <span class="badge badge-eol">EOL</span>
+        </div>
+
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Getting Started</h3>
-      <p>Installa Snode e crea il tuo primo script.</p>
-    </div>
+    <button class="btn-download" id="downloadBtn">
+      <i class="fa-solid fa-download"></i> Scarica 0.1.0
+    </button>
 
-    <div class="card" id="community">
-      <h3>Community</h3>
-      <p>Partecipa allo sviluppo e proponi nuove feature.</p>
-    </div>
-
-    <div class="card" id="downloads">
-      <h3>Download</h3>
-      <p>Pacchetti per Linux, macOS e Windows.</p>
-    </div>
   </section>
 
   <footer>
@@ -333,6 +350,34 @@ if (simplePi.includes(selection)) {
     navToggle.addEventListener("click", () => {
       navLinks.classList.toggle("open");
     });
+
+    /* ===== CUSTOM SELECT ===== */
+    const selectDisplay = document.getElementById("selectDisplay");
+    const selectMenu = document.getElementById("selectMenu");
+    const selectArrow = document.getElementById("selectArrow");
+    const selectedText = document.getElementById("selectedText");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    let currentVersion = "0.1.0";
+
+    selectDisplay.addEventListener("click", () => {
+      selectMenu.classList.toggle("open");
+      selectArrow.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".select-option").forEach(option => {
+      option.addEventListener("click", () => {
+        currentVersion = option.dataset.version;
+        selectedText.textContent = currentVersion;
+        downloadBtn.innerHTML = `<i class="fa-solid fa-download"></i> Scarica ${currentVersion}`;
+        downloadBtn.onclick = () => window.location.href = `/zips/${currentVersion}.zip`;
+
+        selectMenu.classList.remove("open");
+        selectArrow.classList.remove("open");
+      });
+    });
+
+    downloadBtn.onclick = () => window.location.href = `/zips/${currentVersion}.zip`;
   </script>
 
 </body>
